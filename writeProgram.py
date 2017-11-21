@@ -9,9 +9,8 @@ soup = BeautifulSoup(rss, "xml")
 
 name = 0
 for s in soup.find_all("url"):
-    url = s.find_all("image_url")[0].string
     name+=1
-    download_image(url,name)
+    download_image(name)
 
 f = open('file.text', 'w')
 f.writelines(rss)
